@@ -17,7 +17,9 @@ const Popular = () => {
       setPopular(JSON.parse(check));
     } else {
       const api = await fetch(
-        `https://api.spoonacular.com/recipes/random?apiKey=0e7dcf47e1c74656bef4687a3c08b1db&number=9`
+        `https://api.spoonacular.com/recipes/random?apiKey=${
+          import.meta.env.VITE_API_KEY
+        }&number=9`
       );
       const data = await api.json();
 
@@ -34,11 +36,11 @@ const Popular = () => {
           <h3>Popular Picks</h3>
           <Splide
             options={{
-              perPage: 4,
+              perPage: 3,
               arrows: false,
               pagination: false,
               drag: "free",
-              gap: "5rem",
+              gap: "1rem",
             }}
           >
             {popular.map((recipe) => {
@@ -66,7 +68,7 @@ const Wrapper = styled.div`
 `;
 
 const Card = styled.div`
-  min-height: 25rem;
+  min-height: 20rem;
   border-radius: 2rem;
   overflow: hidden;
   position: relative;
@@ -107,5 +109,3 @@ const Gradient = styled.div`
 `;
 
 export default Popular;
-//latwy fetch
-//mapowanie

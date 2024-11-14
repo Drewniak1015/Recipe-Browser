@@ -9,7 +9,9 @@ const Recipe = () => {
 
   const fetchDetails = async () => {
     const data = await fetch(
-      `https://api.spoonacular.com/recipes/${params.name}/information?apiKey=0e7dcf47e1c74656bef4687a3c08b1db`
+      `https://api.spoonacular.com/recipes/${params.name}/information?apiKey=${
+        import.meta.env.VITE_API_KEY
+      }`
     );
     const detailData = await data.json();
     setDetails(detailData);
@@ -28,22 +30,24 @@ const Recipe = () => {
         <img src={details.image} alt={details.title} />
       </div>
       <Info>
-        <Button
-          className={activeTab === "Instructions" ? "active" : ""}
-          onClick={() => {
-            setActiveTab("Instructions");
-          }}
-        >
-          Instructions
-        </Button>
-        <Button
-          className={activeTab === "Ingredients" ? "active" : ""}
-          onClick={() => {
-            setActiveTab("Ingredients");
-          }}
-        >
-          Ingredients
-        </Button>
+        <Buttons>
+          <Button
+            className={activeTab === "Instructions" ? "active" : ""}
+            onClick={() => {
+              setActiveTab("Instructions");
+            }}
+          >
+            Instructions
+          </Button>
+          <Button
+            className={activeTab === "Ingredients" ? "active" : ""}
+            onClick={() => {
+              setActiveTab("Ingredients");
+            }}
+          >
+            Ingredients
+          </Button>
+        </Buttons>
         {activeTab === "Instructions" && (
           <div>
             <h3 dangerouslySetInnerHTML={{ __html: details.summary }}></h3>
@@ -65,11 +69,12 @@ const Recipe = () => {
 };
 
 const DetailWrapper = styled.div`
-  margin-top: 10rem;
+  margin-top: 4rem;
   margin-bottom: 5rem;
   display: flex;
+  align-items: center;
   flex-direction: column;
-
+  text-align: center;
   .active {
     background: linear-gradient(35deg, #494949, #313131);
     color: white;
@@ -92,6 +97,13 @@ const DetailWrapper = styled.div`
     height: auto;
     margin-bottom: 2rem;
   }
+  @media (max-width: 760px) {
+    img {
+      margin: 2rem auto;
+      width: 100%;
+      height: auto;
+    }
+  }
 `;
 
 const Button = styled.button`
@@ -99,10 +111,21 @@ const Button = styled.button`
   color: #313131;
   background: white;
   border: 2px solid black;
-  margin-right: 2rem;
+  margin: 1rem 1rem 1rem 0;
   font-weight: 600;
+
+  @media (max-width: 760px) {
+  }
 `;
 
-const Info = styled.div``;
+const Info = styled.div`
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+`;
+const Buttons = styled.div`
+  display: flex;
+`;
 
 export default Recipe;

@@ -23,7 +23,7 @@ const Search = () => {
 };
 
 const FormStyle = styled.form`
-  margin: 2rem 4rem;
+  margin: 2rem 0rem;
   position: relative;
 
   input {

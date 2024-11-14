@@ -7,9 +7,12 @@ import { useParams } from "react-router-dom";
 function Cusine() {
   const [cusine, setCusine] = useState([]);
   let params = useParams();
+
   const getCusine = async (name) => {
     const data = await fetch(
-      `https://api.spoonacular.com/recipes/complexSearch?apiKey=243e13343d2a4ce8a1e9993f1537c635&number=10&cuisine=${name}`
+      `https://api.spoonacular.com/recipes/complexSearch?apiKey=${
+        import.meta.env.VITE_API_KEY
+      }&number=10&cuisine=${name}`
     );
     const recipes = await data.json();
     setCusine(recipes.results);
@@ -47,7 +50,7 @@ const Card = styled.div`
   }
 
   a {
-    text-decration: none;
+    text-decoration: none;
   }
   h4 {
     text-align: center;

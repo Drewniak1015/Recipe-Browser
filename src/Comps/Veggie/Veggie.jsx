@@ -38,7 +38,7 @@ const Veggie = () => {
               arrows: false,
               pagination: false,
               drag: "free",
-              gap: "5rem",
+              gap: "1rem",
             }}
           >
             {Veggie.map((recipe) => {
@@ -66,7 +66,7 @@ const Wrapper = styled.div`
 `;
 
 const Card = styled.div`
-  min-height: 25rem;
+  min-height: 20rem;
   border-radius: 2rem;
   overflow: hidden;
   position: relative;
@@ -107,5 +107,3 @@ const Gradient = styled.div`
 `;
 
 export default Veggie;
-//latwy fetch
-//mapowanie
