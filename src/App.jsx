@@ -1,20 +1,17 @@
 import React from "react";
-import Home from "./Comps/Home/Home";
 import Pages from "./Comps/Pages/Pages";
 import Category from "./Comps/Category/Category";
 import "./main.css";
-import { BrowserRouter, Link } from "react-router-dom";
+import { BrowserRouter, HashRouter, Link } from "react-router-dom";
 import Search from "./Comps/Search/Search";
 import styled from "styled-components";
 import { GiKnifeFork } from "react-icons/gi";
 
 const App = () => {
   return (
-    <BrowserRouter>
-      {" "}
-      {/* Przeniesione na zewnątrz */}
+    <HashRouter>
       <Nav>
-        <Logo to={"/"}>
+        <Logo to={"/#/Recipe-Browser"}>
           <GiKnifeFork />
           Recipe App
         </Logo>
@@ -22,7 +19,7 @@ const App = () => {
       <Search />
       <Category />
       <Pages />
-    </BrowserRouter>
+    </HashRouter>
   );
 };
 
