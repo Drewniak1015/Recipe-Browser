@@ -11,7 +11,7 @@ const App = () => {
   return (
     <HashRouter>
       <Nav>
-        <Logo to={"/#/Recipe-Browser"}>
+        <Logo to={"/"}>
           <GiKnifeFork />
           Recipe App
         </Logo>
