@@ -7,6 +7,10 @@ Aplikacja webowa, która pozwala użytkownikom wyszukiwać, odkrywać i przeglą
 - **Wyszukiwanie przepisów**: Użytkownicy mogą wyszukiwać przepisy na podstawie składników, nazwy lub kategorii.
 - **Szczegóły przepisu**: Wyświetlanie pełnych informacji o przepisie, w tym składników, instrukcji i wartości odżywczych.
 - **Przyjazny interfejs użytkownika**: Intuicyczny i responsywny design umożliwiający łatwe przeglądanie przepisów.
+- 
+## Demo
+
+Możesz zobaczyć działającą wersję aplikacji na żywo pod tym [linkiem](https://drewniak1015.github.io/Recipe-Browser/).
 
 ## Wykorzystane API
 
@@ -46,6 +50,3 @@ Projekt korzysta z API przepisów do pobierania danych i zapewniania informacji 
 
 Po uruchomieniu aplikacji, otwórz ją w przeglądarce, aby zacząć wyszukiwać przepisy. Możesz używać filtrów do wyszukiwania przepisów na podstawie składników lub kategorii.
 
-## Licencja
-
-Projekt jest licencjonowany na licencji MIT. Zobacz plik [LICENSE](LICENSE) dla szczegółów.
